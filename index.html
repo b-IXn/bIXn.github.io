@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BidCOIN</title>
+    <link rel="stylesheet" href="output.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script>
+      module.exports = {
+        theme: {
+          screens: {
+            sm: "640px",
+            // => @media (min-width: 640px) { ... }
+
+            md: "768px",
+            // => @media (min-width: 768px) { ... }
+
+            lg: "1024px",
+            // => @media (min-width: 1024px) { ... }
+
+            xl: "1280px",
+            // => @media (min-width: 1280px) { ... }
+
+            "2xl": "1536px",
+            // => @media (min-width: 1536px) { ... }
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+         @keyframes appear{
+    from{
+        opacity: 0;
+        scale: 0.2;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+ }
+ @keyframes headings{
+    from{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+ }
+ @keyframes why-us-1{
+  from{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+ }
+ @keyframes why-us-3{
+  from{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+ }
+
+
+  #why-us-1,#buttons,#price-1{
+    animation: why-us-1 linear;
+    animation-timeline: view();
+    animation-range: entry cover 40%;
+
+  }
+  #why-us-2{
+    animation: headings linear;
+    animation-timeline: view();
+    animation-range: entry cover 40%;
+
+  }
+  #why-us-3,#price-3{
+    animation: why-us-3 linear;
+    animation-timeline: view();
+    animation-range: entry cover 40%;
+
+  }
+  #heading-offer{
+    animation: headings linear;
+    animation-timeline: view();
+    animation-range: entry cover 40%;
+
+  }
+
+
+ /* usessssssssssssssssssssssssssss  */
+  #hero-1, #image-1{
+    animation: appear 0.4s linear;
+  }
+    </style>
+
+
+  </head>
+  <body class="p-0 m-0 bg-black" style="font-family: Poppins">
+    <!-- nav bar  -->
+    <!-- navbar main  -->
+    <nav class="py-5 flex p-3 justify-between items-center bg-black shadow-xl">
+      <a class="flex justify-between gap-2 items-center mx-5" href="#">
+        <span class="text-xl font-semibold text-white font-mono"
+          >Nep<span class="text-orange-600">THAILO</span>
+        </span>
+      </a>
+      <!-- large navbar  -->
+      <div class="hidden md:flex gap-8">
+        <a
+          class="transition-all ease-in-out duration-200 hover:text-orange-600 hover:-translate-y-0.5 uppercase text-white"
+          href="#"
+          >home</a
+        >
+        <a
+          class="transition-all ease-in-out duration-200 hover:text-orange-600 hover:-translate-y-0.5 uppercase text-white"
+          href="#"
+          >products</a
+        >
+        <a
+          class="transition-all ease-in-out duration-200 hover:text-orange-600 hover:-translate-y-0.5 uppercase text-white"
+          href="#"
+          >plans</a
+        >
+        <a
+          class="transition-all ease-in-out duration-200 hover:text-orange-600 hover:-translate-y-0.5 uppercase text-white"
+          href="#"
+          >why us</a
+        >
+        <a
+          class="transition-all ease-in-out duration-200 hover:text-orange-600 hover:-translate-y-0.5 uppercase text-white"
+          href="#"
+          >about</a
+        >
+      </div>
+
+      <div class="hidden md:flex mx-5 items-center gap-2">
+        <button
+          class="bg-orange-600 text-white rounded px-6 py-1 hover:-translate-y-1 transition-all ease-in-out duration-200 shadow-xl"
+        >
+          Log In
+        </button>
+        <button
+          class="bg-orange-100 text-orange-600 rounded px-6 py-1 hover:-translate-y-1 transition-all ease-in-out duration-200 shadow-xl"
+        >
+          Sign Up
+        </button>
+      </div>
+
+      <button class="md:hidden p-2 text-white" onclick="openMenu()">
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+      <!-- for mobile devices  dsagasgadsgshadshsahadsha  -->
+      <div
+        id="nav-dialog"
+        class="hidden inset-0 fixed z-10 md:hidden p-3 bg-black"
+      >
+        <div class="flex justify-between bg-black">
+          <a class="flex justify-between gap-2 items-center" href="#">
+            <span class="text-xl font-semibold text-white font-mono"
+            >Nep<span class="text-orange-600">THAILO</span>
+          </span>
+
+          </a>
+
+          <button class="md:hidden p-2 text-white" onclick="openMenu()">
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+        </div>
+        <div class="bg-orange-900 h-1 mt-3 mb-3 min-w-full"></div>
+
+        <div class="mx-auto">
+          <a
+            class="block mx-auto px-5 py-2 text-white uppercase hover:bg-orange-900 border hover:border-1"
+            href="#"
+            >> home</a
+          >
+          <a
+            class="block mx-auto px-5 py-2 text-white uppercase hover:bg-orange-900 border hover:border-1"
+            href="#"
+            >> products</a
+          >
+          <a
+            class="block mx-auto px-5 py-2 text-white uppercase hover:bg-orange-900 border hover:border-1"
+            href="#"
+            >> plans</a
+          >
+          <a
+            class="block mx-auto px-5 py-2 text-white uppercase hover:bg-orange-900 border hover:border-1"
+            href="#"
+            >> why us</a
+          >
+          <a
+            class="block mx-auto px-5 py-2 text-white uppercase hover:bg-orange-900 border hover:border-1"
+            href="#"
+            >> about</a
+          >
+        </div>
+        <div class="bg-orange-900 h-1 mt-3 mb-3 min-w-full"></div>
+
+        <div class="flex mx-2 items-center justify-evenly">
+          <button
+            class="bg-orange-600 text-white rounded px-6 py-2 hover:-translate-y-1 transition-all ease-in-out duration-200 shadow-xl"
+          >
+            Log In
+          </button>
+          <button
+            class="bg-orange-100 text-orange-600 rounded px-6 py-2 hover:-translate-y-1 transition-all ease-in-out duration-200 shadow-xl"
+          >
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </nav>
+    <!-- hero sectionnnn  -->
+    <main
+      id="hero"
+      class="min-h-screen  mb-8 bg-gradient-to-br from-black via-orange-800 to-orange-200">
+      <div
+        class=" md:pt-14 pt-5 grid md:grid-cols-[40%_auto] items-center justify-center">
+        <div id="hero-1" class="hidden md:block">
+          <h1 class="text-white font-extrabold text-3xl md:text-5xl text-left px-5 py-1">
+            First
+            <span class="text-orange-600 "> Nepali Crypto Wallet</span>,Best
+            Crypto  Wallet<span class="text-orange-600">!</span>
+          </h1>
+          <p class="text-white pt-5 text-left px-5 text-sm md:text-lg">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Praesentium molestiae aut consequatur corrupti officia eaque
+            suscipit similique. Facere labore quibusdam assumenda voluptatem
+            deserunt! Doloribus quas dolor fugit delectus, blanditiis
+            dignissimos?
+          </p>
+          <button id="buttons" class=" mt-2 mx-5 bg-orange-600 hover:bg-orange-100 hover:text-orange-700 hover:border-orange-700 px-8 py-2 rounded text-white shadow-lg hover:-translate-y-0.5 transition-all ease-in-out duration-200" id="name" >Get Started</button>
+
+        </div>
+        <figure id="image-1" class=" pl-2 md:block hidden">
+          <img src="img/hero4.png" class="md:w-[600px] w-fit" alt="img" />
+        </figure>
+      </div>
+      <div class="md:hidden block">
+        <h1 id="hero-1" class="text-white font-extrabold text-5xl md:text-5xl text-left px-5 py-1">
+          First
+          <span class="text-orange-600 "> Nepali Crypto Wallet</span>,Best
+          Crypto  Wallet<span class="text-orange-600">!</span>
+        </h1>
+        <figure class="pl-2">
+          <img class="mx-auto" src="img/hero4.png" width="400px" md:width="600px" alt="img" />
+        </figure>
+        <p class="text-white pt-5 text-left px-5 text-sm md:text-lg">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Praesentium molestiae aut consequatur corrupti officia eaque
+          suscipit similique. Facere labore quibusdam assumenda voluptatem
+          deserunt! Doloribus quas dolor fugit delectus, blanditiis
+          dignissimos?
+        </p>
+        <button class=" mt-2 mx-5 bg-orange-600 hover:bg-orange-100 hover:text-orange-700 hover:border-orange-700 px-8 py-2 rounded text-white shadow-lg hover:-translate-y-0.5 transition-all ease-in-out duration-200" id="name" >Get Started</button>
+
+
+        
+      </div>
+      <!-- why us section  -->
+      <div class="md:mt-24 mt-14">
+        <div id="heading-offer" class="">
+          <h1 class="flex justify-center text-2xl font-semibold">
+            Why- 
+            <span class="text-white"> Nep</span>
+            <span class="text-orange-600">THAILO</span>?
+        </h1>
+        
+          <h1 class=" text-3xl flex items-center justify-center text-white">Cause we offer</h1>
+        </div>
+        <!-- cardsssssssssssssssssss  -->
+        <div id="why-us-boxes" class="md:flex justify-center items-center mt-3 grid grid-cols-1 gap-3   mx-5 md:gap-8">
+          <div id="why-us-1" class="mx-auto md:mx-0 py-12 px-5 text-white  hover:-translate-y-0.5 transition-all ease-in-out duration-200 hover:border-orange-950 grid grid-rows-3 items-center justify-center text-center border border-orange-900 rounded-xl  bg-orange-900 max-w-[250px]">
+            <svg  class=" text-white mx-auto bg-orange-600 rounded p-1 w-12" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M461.81 53.81a4.4 4.4 0 00-3.3-3.39c-54.38-13.3-180 34.09-248.13 102.17a294.9 294.9 0 00-33.09 39.08c-21-1.9-42-.3-59.88 7.5-50.49 22.2-65.18 80.18-69.28 105.07a9 9 0 009.8 10.4l81.07-8.9a180.29 180.29 0 001.1 18.3 18.15 18.15 0 005.3 11.09l31.39 31.39a18.15 18.15 0 0011.1 5.3 179.91 179.91 0 0018.19 1.1l-8.89 81a9 9 0 0010.39 9.79c24.9-4 83-18.69 105.07-69.17 7.8-17.9 9.4-38.79 7.6-59.69a293.91 293.91 0 0039.19-33.09c68.38-68 115.47-190.86 102.37-247.95zM298.66 213.67a42.7 42.7 0 1160.38 0 42.65 42.65 0 01-60.38 0z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"/><path d="M109.64 352a45.06 45.06 0 00-26.35 12.84C65.67 382.52 64 448 64 448s65.52-1.67 83.15-19.31A44.73 44.73 0 00160 402.32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="28"/></svg>
+            <h2 class="text-xl font-semibold" >Fast Transfers</h2>
+            <h5>Instantaneous transaction processing for quick transfers. </h5>
+          </div>
+
+          <div id="why-us-2" class="mx-auto md:mx-0 py-12 px-5 text-white  hover:-translate-y-0.5 transition-all ease-in-out duration-200 hover:border-orange-950 grid grid-rows-3 items-center justify-center text-center border border-orange-900 rounded-xl  bg-orange-900 max-w-[250px]">
+            <svg  class="text-white mx-auto bg-orange-600 rounded p-1 w-12" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M461.81 53.81a4.4 4.4 0 00-3.3-3.39c-54.38-13.3-180 34.09-248.13 102.17a294.9 294.9 0 00-33.09 39.08c-21-1.9-42-.3-59.88 7.5-50.49 22.2-65.18 80.18-69.28 105.07a9 9 0 009.8 10.4l81.07-8.9a180.29 180.29 0 001.1 18.3 18.15 18.15 0 005.3 11.09l31.39 31.39a18.15 18.15 0 0011.1 5.3 179.91 179.91 0 0018.19 1.1l-8.89 81a9 9 0 0010.39 9.79c24.9-4 83-18.69 105.07-69.17 7.8-17.9 9.4-38.79 7.6-59.69a293.91 293.91 0 0039.19-33.09c68.38-68 115.47-190.86 102.37-247.95zM298.66 213.67a42.7 42.7 0 1160.38 0 42.65 42.65 0 01-60.38 0z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"/><path d="M109.64 352a45.06 45.06 0 00-26.35 12.84C65.67 382.52 64 448 64 448s65.52-1.67 83.15-19.31A44.73 44.73 0 00160 402.32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="28"/></svg>
+            <h2 class="text-xl font-semibold" >Fast Transfers</h2>
+            <h5>Instantaneous transaction processing for quick transfers. </h5>
+          </div>
+
+          <div id="why-us-3" class="mx-auto md:mx-0 py-12 px-5 text-white  hover:-translate-y-0.5 transition-all ease-in-out duration-200 hover:border-orange-950 grid grid-rows-3 items-center justify-center text-center border border-orange-900 rounded-xl  bg-orange-900 max-w-[250px]">
+            <svg  class="text-white mx-auto bg-orange-600 rounded p-1 w-12" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M461.81 53.81a4.4 4.4 0 00-3.3-3.39c-54.38-13.3-180 34.09-248.13 102.17a294.9 294.9 0 00-33.09 39.08c-21-1.9-42-.3-59.88 7.5-50.49 22.2-65.18 80.18-69.28 105.07a9 9 0 009.8 10.4l81.07-8.9a180.29 180.29 0 001.1 18.3 18.15 18.15 0 005.3 11.09l31.39 31.39a18.15 18.15 0 0011.1 5.3 179.91 179.91 0 0018.19 1.1l-8.89 81a9 9 0 0010.39 9.79c24.9-4 83-18.69 105.07-69.17 7.8-17.9 9.4-38.79 7.6-59.69a293.91 293.91 0 0039.19-33.09c68.38-68 115.47-190.86 102.37-247.95zM298.66 213.67a42.7 42.7 0 1160.38 0 42.65 42.65 0 01-60.38 0z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"/><path d="M109.64 352a45.06 45.06 0 00-26.35 12.84C65.67 382.52 64 448 64 448s65.52-1.67 83.15-19.31A44.73 44.73 0 00160 402.32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="28"/></svg>
+            <h2 class="text-xl font-semibold" >Fast Transfers</h2>
+            <h5>Instantaneous transaction processing for quick transfers. </h5>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- -exclusivee nnnnnnnnnnnnnnnnnnnn  -->
+      <div id="main-offers">
+        <div class="mt-24 hidden md:block">
+          <div class=" mx-5 grid md:grid-cols-[40%_auto] justify-center items-center grid-cols-1" >
+            <div id="heading-offer" class="py-2">
+              <h1 class="text-lg text-orange-600">Cashback</h1>
+              <h1  class=" py-1 font-semibold text-3xl md:text-5xl">Up-to <span class="text-orange-600">80%</span> <span class="text-white">Cashback!</span> (for early bird clients) </h1>
+              
+              <p class="py-1 text-lg md:text-xl "> Get exclusive CashBack offers with every purchase! Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+              <button id="buttons" class="mt-2 mx-auto  mb-1 bg-orange-700 hover:bg-orange-100  hover:text-orange-700 hover:border-orange-700 px-8 py-2 rounded text-white shadow-lg hover:-translate-y-0.5 transition-all ease-in-out duration-200">Learn More</button>
+            </div>
+            <figure id="image-2" class="leading-relaxed"> <img width="500px" src="img/hero3.png" alt=""></figure>
+          </div>
+  
+        </div>
+        <div id="for-mobile" class="mt-14 block md:hidden"> <!-- Use 'hidden' here to hide this section -->
+          <div class="mx-5 grid md:grid-cols-[40%_auto] justify-center items-center grid-cols-1">
+              <div id="heading-offer" class="py-2">
+                  <h1 class="text-lg text-orange-600">Cashback</h1>
+                  <h1 class="py-1 font-semibold text-3xl md:text-5xl">Up-to <span class="text-orange-600">80%</span> <span class="text-white">Cashback!</span> (for early bird clients)</h1>
+                  <figure id="image-2"><img width="600px" src="img/hero3.png" alt=""></figure>
+                  <p class="py-1 text-lg md:text-xl">Get exclusive CashBack offers with every purchase! Lorem ipsum dolor slit.</p>
+                  <button id="buttons" class="mt-2 mb-1 bg-orange-700 hover:bg-orange-100 hover:text-orange-700 hover:border-orange-700 px-8 py-2 rounded text-white shadow-lg hover:-translate-y-0.5 transition-all ease-in-out duration-200">Learn More</button>
+              </div>
+          </div>
+      </div>
+      
+      <section>
+        <div id="heading-offer">
+          <h1 class="text-xl text-orange-600 text-center">Pricing</h1>
+          <h1 class="md:text-3xl text-2xl text-white text-center">Affordable Options for Every Need</h1>
+      </div>
+      <div>
+        <!-- cardsssssssssssssssssss  -->
+        <div class="mt-5 md:flex justify-center md:gap-x-4 md:items-start flex flex-wrap gap-3 mx-2">
+          <div id="price-1" class="z-4 bg-orange-950 text-orange-50 px-3 py-4 shadow-2xl rounded-tl-3xl rounded">
+            <h1 class="text-2xl font-bold">999 <span class="text-lg">npr/mo</span></h1>
+            <h1 class="text-xl font-semibold pb-1 text-orange-600">Basic</h1>
+            <hr>
+            <ul class="pt-1">
+              <li class="font-extralight hover:text-orange-600 hover:transform group-hover: scale-1.1 transition-all ease-in-out duration-200"><a href="#"> <span class="group-hover:-translate-x-1 text-orange-600 text-lg ml-3 text-left">&check;</span> Text from Bidhan Daju</a></li>
+              
+              <li class="font-extralight hover:text-orange-600 hover:transform group-hover: scale-1.1 transition-all ease-in-out duration-200"><a href="#"> <span class="group-hover:-translate-x-1 text-orange-600 text-lg ml-3 text-left">&check;</span> Supports 1 type of crypto</a></li>
+              <li class="font-extralight hover:text-orange-600 hover:transform group-hover: scale-1.1 transition-all ease-in-out duration-200"><a href="#"> <span class="group-hover:-translate-x-1 text-orange-600 text-lg ml-3 text-left">&check;</span> Fixed transaction fees </a></li>
+              <li class="font-extralight hover:text-orange-600 hover:transform group-hover: scale-1.1 transition-all ease-in-out duration-200"><a href="#"> <span class="group-hover:-translate-x-1 text-orange-600 text-lg ml-3 text-left">&check;</span> Only supports transactions in NPR</a></li>
+              <li class="font-extralight hover:text-orange-600 hover:transform group-hover: scale-1.1 transition-all ease-in-out duration-200"><a href="#"> <span class="group-hover:-translate-x-1 text-orange-600 text-lg ml-3 text-left">&check;</span> Withdraw up to Rs.50,000 per day</a></li>
+              <li class="font-extralight hover:text-orange-600 hover:transform group-hover: scale-1.1 transition-all ease-in-out duration-200"><a href="#"> <span class="group-hover:-translate-x-1 text-orange-600 text-lg ml-3 text-left">&check;</span> Manage only one crypto wallet </a></li>
+            </ul>
+            <button class="mt-2 mx-3 bg-orange-700 hover:bg-orange-100 hover:text-orange-700 px-8 py-2 rounded text-white shadow-lg hover:-translate-y-0.5 transition-all ease-in-out duration-200">Choose Plan</button>
+          </div>
+          
+          <div id="price-2" class="z-8 bg-orange-900 border-2 border-orange-900 shadow-3xl text-orange-50 px-3 py-4 rounded">
+            <div class="text-right"><button class="bg-orange-600 px-4 py-1 rounded-lg shadow-2xl cursor-default animate-bounce">Most Popular!</button></div>
+            <h1 class="text-2xl font-bold">1999 <span class="text-lg">npr/mo</span></h1>
+            <h1 class="text-xl font-semibold pb-1 text-orange-600">Pro</h1>
+            <hr>
+            <ul class="pt-1">
+              <ul class="pt-1">
+                <li class="font-extralight hover:text-orange-600 hover:transform group-hover: scale-1.1 transition-all ease-in-out duration-200"><a href="#"> <span class="group-hover:-translate-x-1 text-orange-600 text-lg ml-3 text-left">&check;</span> Voice Call from Bidhan Daju</a></li>
+                
+                <li class="font-extralight hover:text-orange-600 hover:transform group-hover: scale-1.1 transition-all ease-in-out duration-200"><a href="#"> <span class="group-hover:-translate-x-1 text-orange-600 text-lg ml-3 text-left">&check;</span> Supports 5 type of crypto</a></li>
+                <li class="font-extralight hover:text-orange-600 hover:transform group-hover: scale-1.1 transition-all ease-in-out duration-200"><a href="#"> <span class="group-hover:-translate-x-1 text-orange-600 text-lg ml-3 text-left">&check;</span> Limited transaction fees </a></li>
+                <li class="font-extralight hover:text-orange-600 hover:transform group-hover: scale-1.1 transition-all ease-in-out duration-200"><a href="#"> <span class="group-hover:-translate-x-1 text-orange-600 text-lg ml-3 text-left">&check;</span> Multi-currency transaction support</a></li>
+                <li class="font-extralight hover:text-orange-600 hover:transform group-hover: scale-1.1 transition-all ease-in-out duration-200"><a href="#"> <span class="group-hover:-translate-x-1 text-orange-600 text-lg ml-3 text-left">&check;</span> Withdraw up to Rs. 1Lakh per day</a></li>
+                <li class="font-extralight hover:text-orange-600 hover:transform group-hover: scale-1.1 transition-all ease-in-out duration-200"><a href="#"> <span class="group-hover:-translate-x-1 text-orange-600 text-lg ml-3 text-left">&check;</span> Manage upto 3 crypto wallets </a></li>
+              </ul>
+            </ul>
+            <button class="mt-2 mx-3 bg-orange-700 hover:bg-orange-100 hover:text-orange-700 px-8 py-2 rounded text-white shadow-lg hover:-translate-y-0.5 transition-all ease-in-out duration-200">Choose Plan</button>
+          </div>
+          
+          <div id="price-3" class="z-6 bg-orange-950 text-orange-50 px-3 py-4 shadow-2xl rounded-tr-3xl rounded">
+            <h1 class="text-2xl font-bold">4999 <span class="text-lg">npr/mo</span></h1>
+            <h1 class="text-xl font-semibold pb-1 text-orange-600">Enterprise</h1>
+            <hr>
+            <ul class="pt-1">
+              <ul class="pt-1">
+                <li class="font-extralight hover:text-orange-600 hover:transform group-hover: scale-1.1 transition-all ease-in-out duration-200"><a href="#"> <span class="group-hover:-translate-x-1 text-orange-600 text-lg ml-3 text-left">&check;</span> Video Call from Bidhan Daju</a></li>
+                
+                <li class="font-extralight hover:text-orange-600 hover:transform group-hover: scale-1.1 transition-all ease-in-out duration-200"><a href="#"> <span class="group-hover:-translate-x-1 text-orange-600 text-lg ml-3 text-left">&check;</span> Supports all types of crypto</a></li>
+                <li class="font-extralight hover:text-orange-600 hover:transform group-hover: scale-1.1 transition-all ease-in-out duration-200"><a href="#"> <span class="group-hover:-translate-x-1 text-orange-600 text-lg ml-3 text-left">&check;</span> No transaction fees </a></li>
+                <li class="font-extralight hover:text-orange-600 hover:transform group-hover: scale-1.1 transition-all ease-in-out duration-200"><a href="#"> <span class="group-hover:-translate-x-1 text-orange-600 text-lg ml-3 text-left">&check;</span> Supports transaction in all currencies</a></li>
+                <li class="font-extralight hover:text-orange-600 hover:transform group-hover: scale-1.1 transition-all ease-in-out duration-200"><a href="#"> <span class="group-hover:-translate-x-1 text-orange-600 text-lg ml-3 text-left">&check;</span> Withdraw up to Rs. 10Lakhs per day</a></li>
+                <li class="font-extralight hover:text-orange-600 hover:transform group-hover: scale-1.1 transition-all ease-in-out duration-200"><a href="#"> <span class="group-hover:-translate-x-1 text-orange-600 text-lg ml-3 text-left">&check;</span> Manage upto 10 crypto wallets </a></li>
+              </ul>
+            </ul>
+            <button class="mt-2 mx-3 bg-orange-700 hover:bg-orange-100 hover:text-orange-700 px-8 py-2 rounded text-white shadow-lg hover:-translate-y-0.5 transition-all ease-in-out duration-200">Choose Plan</button>
+          </div>
+        </div>
+        
+
+          
+
+        </div>
+        <!-- ----------------------  -->
+      </div>
+      </section>
+
+
+
+
+      <!-- Contact Section -->
+      <div id="heading-offer" class="md:mt-24 mt-12 pb-12">
+        <div>
+            <h1 class="text-xl text-orange-600 text-center">Got a question?</h1>
+            <h1 class="md:text-3xl text-2xl text-white text-center">Get in touch with us</h1>
+        </div>
+        <form action="#" class="mt-4 grid grid-rows-2 border border-orange-500 rounded-3xl mx-5 py-2">
+          <div class=" m-auto md:w-2/3">
+            <div class="grid mx-5 md:mx-0 md:grid-cols-2 gap-6 py-2 text-black"> 
+              <input type="text" class="rounded px-3 py-2 focus:outline-none shadow-xl focus:shadow-2xl bg-orange-100 text-orange-900 w-full" placeholder="Name" name="" required id="name">
+              <input type="email" class="rounded px-3 py-2 focus:outline-none shadow-xl focus:shadow-2xl bg-orange-100 text-orange-900 w-full" placeholder="Email" name="" required id="name">
+              <input type="tel" class="rounded px-3 py-2 focus:outline-none shadow-xl focus:shadow-2xl bg-orange-100 text-orange-900 w-full" placeholder="Phone" name="" required id="name">
+              <input type="text" class="rounded px-3 py-2 focus:outline-none shadow-xl focus:shadow-2xl bg-orange-100 text-orange-900 w-full" placeholder="Company" name="" required id="name">
+
+            </div>
+            
+          </div>
+          <textarea class="w-72 mx-auto mt-2 rounded p-4  bg-orange-100 text-orange-900 focus:outline-none shadow-2xl font-light" placeholder="Your message" name="" required id="name"></textarea>
+
+        </form>
+        <div class="flex justify-center  mt-2 mx-auto ">
+          <button class=" mt-2 mb-3 bg-orange-600 hover:bg-orange-100 hover:text-orange-700 hover:border-orange-700 px-8 py-2 rounded text-white shadow-lg hover:-translate-y-0.5 transition-all ease-in-out duration-200" id="name" >Submit</button>
+          <label for="name"></label>
+        </div>
+    </div>
+    
+    
+      
+      
+
+
+        
+       
+
+
+    </main>
+    <footer class="bg-black text-orange-100">
+      <div class="pt-3 mx-5 pb-12 grid gap-3 md:grid-cols-[30%_20%_20%_auto] flex-cols-1">
+        <!-- for about app  -->
+        <div>
+          <h1 class="text-orange-600 font-semibold text-lg">
+            About BidCOIN
+          </h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab odio provident dignissimos, architecto accusantium a sequi!</p>
+          <h1 class="pt-2 text-orange-600"> 
+            Follow Us
+          <div  class="text-white text-xl flex gap-2 ">
+              <ion-icon name="logo-facebook"></ion-icon>
+              <ion-icon name="logo-instagram"></ion-icon>
+              <ion-icon name="logo-linkedin"></ion-icon>
+              <ion-icon name="logo-twitter"></ion-icon>
+              <ion-icon name="logo-youtube"></ion-icon>
+          </div>
+          </h1>
+
+        </div>
+        <!-- for links  -->
+        <div>
+          <h1 class="text-orange-600 font-semibold text-lg">Quick Links</h1>
+          <ul class="font-extralight">
+            <li>Home</li>
+            <li>Products</li>
+            <li>plans</li>
+            <li>Blog</li>
+            <li>Why Us</li>
+          </ul>
+        </div>
+        <!-- for help  -->
+        <div>
+          <h1 class="text-orange-600 font-semibold text-lg">More Info</h1>
+          <ul class="font-extralight">
+            <li>About Us</li>
+            <li>Reviews</li>
+            <li>Partners</li>
+            <li>Terms and Conditions</li>
+            <li>Team</li>
+            
+
+          </ul>
+        </div>
+        <!-- for newsletter  -->
+        <div>
+          <h1 class="text-orange-600 font-semibold text-lg">Newsletter</h1>
+          <p>Subscribe to our newsletter to know about the best offers first!</p>
+          <form action="#">
+            <input type="email" name="" id="" placeholder="Email" class="px-2 py-1 rounded">
+          </form>
+          <button class=" mt-2 mb-1 bg-white text-orange-600 hover:bg-orange-100 hover:text-orange-700 hover:border-orange-700 px-6 py-1 rounded shadow-lg hover:-translate-y-0.5 transition-all ease-in-out duration-200" id="name" >Subscribe</button>
+          
+        </div>
+      </div>
+      <div class="text-white text-sm text-center"><h1>© Bidhan Karkee 2069. Almost all rights reserved.</h1></div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
